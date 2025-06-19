@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Librería</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="landing">
+    <h1>Bienvenido a BiblioWeb</h1>
+    <p>Explora, busca o publica tu propio libro</p>
+  </header>
+
+  <div class="container-image">
+    <main class="container">
+        <section class="dropdown">
+          <button class="dropdown-toggle">Colección de libros</button>
+          <div class="dropdown-content"></div>
+        </section>
+
+        <section class="dropdown">
+          <button class="dropdown-toggle">Encontrar un libro</button>
+          <div class="dropdown-content">
+            <p>Ingrese el nombre del libro</p>
+            <input type="text" />
+            <button>Buscar</button>
+          </div>
+        </section>
+
+        <section class="dropdown">
+          <button class="dropdown-toggle">¿Cómo publicar un libro?</button>
+          <div class="dropdown-content">
+            <p>Título</p>
+            <input type="text" />
+            <p>Autor</p>
+            <input type="text" />
+            <p>Año</p>
+            <input type="number" />
+            <p>Categoría</p>
+            <input type="text" />
+            <p>Páginas</p>
+            <input type="number" />
+            <button>Submit</button>
+          </div>
+        </section>
+
+        <section class="dropdown">
+          <button class="dropdown-toggle">¿Cómo modificar tu libro?</button>
+          <div class="dropdown-content">
+            <p>Ingrese el nombre del libro a modificar</p>
+            <input type="text" />
+            <button>Buscar</button>
+          </div>
+        </section>
+
+        <section class="dropdown">
+          <button class="dropdown-toggle">¿Cómo eliminar tu libro?</button>
+          <div class="dropdown-content">
+            <p>Ingrese el nombre del libro a eliminar</p>
+            <input type="text" />
+            <button>Eliminar</button>
+          </div>
+        </section>
+      </main>
+
+    <img src="biblioteca.jpg" alt="cafe">
+  </div>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
