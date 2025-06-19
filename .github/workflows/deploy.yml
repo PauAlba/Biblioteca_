@@ -1,0 +1,21 @@
+name: Deploy to Droplet
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install sshpass
+      run: sudo apt-get install -y sshpass
+
+    - name: Deploy
+      run: |
+        sshpass -p '${{ secrets.DROPLET_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USER }}@${{ secrets.DROPLET_HOST }} "
+          cd /var/www/myapp &&
+          git pull origin main &&
+          npm install &&
+          pm2 restart all
+        "
