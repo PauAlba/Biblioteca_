@@ -13,6 +13,17 @@ app = FastAPI()
 app.title = "Mi primera API con FastAPI prro"
 app.version = "0.0.1"
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Para desarrollo, luego puedes poner solo tu IP pública
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 app.add_middleware(ErrorHandler)
 app.include_router(book_router)
 app.include_router(user_router)
@@ -31,4 +42,4 @@ class JWTBearer(HTTPBearer):
 
 
 #ORM y sqlalchemy
-#todo pero para computadoras y ponerle seguridad a todos
+
