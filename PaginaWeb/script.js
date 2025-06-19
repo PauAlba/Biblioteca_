@@ -67,12 +67,30 @@ function publicarLibro() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Bearer TU_TOKEN_AQUÍ'
+      Authorization: 'Bearer eltokenuwu'
     },
     body: JSON.stringify(nuevoLibro)
   })
     .then(res => res.json())
     .then(data => alert(data.message))
     .catch(err => alert("Error al registrar el libro"));
+
+}
+
+function eliminarLibro() {
+  const id = document.getElementById('eiliminar-libro').value;
+
+  fetch(`http://localhost:8000/books/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer elfo*intoken'
+    }})
+    .then(res => {
+      if (!res.ok) throw new Error("Libro no encontrado");
+      return res.json();
+    })
+    .then(data => alert(data.message))
+    .catch(err => alert("libro  no encontrado"));
 
 }

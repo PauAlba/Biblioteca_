@@ -22,7 +22,7 @@
         <section class="dropdown">
           <button class="dropdown-toggle">Encontrar un libro</button>
           <div class="dropdown-content">
-            <p>Ingrese el nombre del libro</p>
+            <p>Ingrese el identificador del libro</p>
             <input type="text" />
             <button onclick="buscarLibro()">Buscar</button>
           </div>
@@ -43,7 +43,7 @@
         <section class="dropdown">
           <button class="dropdown-toggle">¿Cómo modificar tu libro?</button>
           <div class="dropdown-content">
-            <p>Ingrese el nombre del libro a modificar</p>
+            <p>Ingrese el identificador del libro a modificar</p>
             <input type="text" />
             <button>Buscar</button>
           </div>
@@ -52,9 +52,9 @@
         <section class="dropdown">
           <button class="dropdown-toggle">¿Cómo eliminar tu libro?</button>
           <div class="dropdown-content">
-            <p>Ingrese el nombre del libro a eliminar</p>
-            <input type="text" />
-            <button>Eliminar</button>
+            <p>Ingrese el identificador del libro a eliminar</p>
+            <input type="number" id="eliminar-libro" />
+            <button onclick="eliminarLibro()">Eliminar</button>
           </div>
         </section>
       </main>
