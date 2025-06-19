@@ -24,24 +24,19 @@
           <div class="dropdown-content">
             <p>Ingrese el nombre del libro</p>
             <input type="text" />
-            <button>Buscar</button>
+            <button onclick="buscarLibro()">Buscar</button>
           </div>
         </section>
 
         <section class="dropdown">
           <button class="dropdown-toggle">¿Cómo publicar un libro?</button>
           <div class="dropdown-content">
-            <p>Título</p>
-            <input type="text" />
-            <p>Autor</p>
-            <input type="text" />
-            <p>Año</p>
-            <input type="number" />
-            <p>Categoría</p>
-            <input type="text" />
-            <p>Páginas</p>
-            <input type="number" />
-            <button>Submit</button>
+          <input placeholder="Titulo" type="text" id="titulo" />
+          <input placeholder="Autor" type="text" id="autor" />
+          <input placeholder="Anio" type="number" id="anio" />
+          <input placeholder="Categoria" type="text" id="categoria" />
+          <input placeholder="Paginas" type="number" id="paginas" />
+          <button onclick="publicarLibro()">Submit</button>
           </div>
         </section>
 
