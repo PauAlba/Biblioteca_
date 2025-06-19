@@ -14,7 +14,7 @@ jobs:
       - name: Deploy via ssh with password
         run: |
           sshpass -p '${{ secrets.DROPLET_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USER }}@${{ secrets.DROPLET_HOST }} << EOF
-            cd /var/www/myapp
+            cd /home/Biblioteca_
             git pull origin main
             npm install
             pm2 restart all
