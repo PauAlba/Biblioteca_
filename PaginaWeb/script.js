@@ -8,3 +8,4 @@ dropdowns.forEach(drop => {
     content.style.display = content.style.display === 'flex' ? 'none' : 'flex';
   });
 });
+//cu
