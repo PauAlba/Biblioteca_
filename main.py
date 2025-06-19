@@ -10,7 +10,7 @@ from routers.user import user_router
 #json response investigacion
 
 app = FastAPI()
-app.title = "Mi primera API con FastAPI prro"
+app.title = "Lo quiero mucho profe, ojalá el aoty sea de sincerely"
 app.version = "0.0.1"
 
 from fastapi.middleware.cors import CORSMiddleware
