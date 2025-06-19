@@ -1,25 +1,19 @@
 name: Deploy to Droplet
-on:
-  push:
-    branches:
-      - main    # Se ejecuta solo cuando haces push a main (cámbialo si quieres otra rama)
+on: [push]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Start SSH agent and add private key
-        uses: webfactory/ssh-agent@v0.8.1
-        with:
-          ssh-private-key: ${{ secrets.DROPLET_SSH_KEY }}
+      - name: Install sshpass
+        run: sudo apt-get update && sudo apt-get install -y sshpass
 
-      - name: Deploy application via SSH
+      - name: Deploy via ssh with password
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USER }}@${{ secrets.DROPLET_HOST }} << 'EOF'
+          sshpass -p '${{ secrets.DROPLET_PASSWORD }}' ssh -o StrictHostKeyChecking=no ${{ secrets.DROPLET_USER }}@${{ secrets.DROPLET_HOST }} << EOF
             cd /var/www/myapp
             git pull origin main
             npm install
